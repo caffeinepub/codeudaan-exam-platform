@@ -10,7 +10,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Clock,
-  Code2,
   Flag,
   Send,
   Video,
@@ -226,13 +225,11 @@ export default function ExamPage() {
       <header className="sticky top-0 z-30 border-b border-border/50 bg-surface/90 backdrop-blur-md">
         <div className="max-w-[1400px] mx-auto px-6 py-3 flex items-center gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-md bg-neon/20 border border-neon/40 flex items-center justify-center">
-              <Code2 className="w-3.5 h-3.5 text-neon" />
-            </div>
-            <span className="font-bold text-sm tracking-tight">
-              <span className="text-neon">Code</span>
-              <span className="text-foreground">Udaan</span>
-            </span>
+            <img
+              src="/assets/uploads/chatgpt_image_mar_1_2026_10_27_56_pm-019d313a-f842-7626-816b-b899df228237-1.png"
+              alt="CodeUdaan Logo"
+              className="h-10 w-auto object-contain"
+            />
           </div>
 
           <nav

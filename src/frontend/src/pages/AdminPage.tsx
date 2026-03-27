@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useGetAllResults } from "@/hooks/useQueries";
 import {
-  Code2,
   Crown,
   Mail,
   RefreshCw,
@@ -130,13 +129,11 @@ export default function AdminPage() {
       <header className="sticky top-0 z-30 border-b border-border/50 bg-surface/90 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-neon/20 border border-neon/40 flex items-center justify-center neon-glow">
-              <Code2 className="w-4 h-4 text-neon" />
-            </div>
-            <span className="font-bold text-lg tracking-tight">
-              <span className="text-neon neon-text">Code</span>
-              <span className="text-foreground">Udaan</span>
-            </span>
+            <img
+              src="/assets/uploads/chatgpt_image_mar_1_2026_10_27_56_pm-019d313a-f842-7626-816b-b899df228237-1.png"
+              alt="CodeUdaan Logo"
+              className="h-10 w-auto object-contain"
+            />
           </div>
           <div className="flex items-center gap-2 ml-2">
             <span className="text-xs font-semibold bg-neon/15 border border-neon/40 text-neon rounded-full px-3 py-1">

@@ -8,7 +8,6 @@ import {
   Camera,
   ChevronRight,
   Clock,
-  Code2,
   Shield,
 } from "lucide-react";
 import { motion } from "motion/react";
@@ -96,13 +95,11 @@ export default function StartPage() {
       <header className="relative z-10 border-b border-border/50 bg-surface/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-neon/20 border border-neon/40 flex items-center justify-center neon-glow">
-              <Code2 className="w-4 h-4 text-neon" />
-            </div>
-            <span className="font-bold text-lg tracking-tight">
-              <span className="text-neon neon-text">Code</span>
-              <span className="text-foreground">Udaan</span>
-            </span>
+            <img
+              src="/assets/uploads/chatgpt_image_mar_1_2026_10_27_56_pm-019d313a-f842-7626-816b-b899df228237-1.png"
+              alt="CodeUdaan Logo"
+              className="h-10 w-auto object-contain"
+            />
           </div>
           <div className="ml-auto">
             <span className="text-xs text-muted-foreground bg-surface/60 border border-border/60 rounded-full px-3 py-1">

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { AlertOctagon, Code2, Mail, ShieldX } from "lucide-react";
+import { AlertOctagon, Mail, ShieldX } from "lucide-react";
 import { motion } from "motion/react";
 
 function openSupport() {
@@ -21,13 +21,11 @@ export default function TerminatePage() {
       <header className="relative z-10 border-b border-border/50 bg-surface/80 backdrop-blur-sm">
         <div className="max-w-5xl mx-auto px-6 py-4 flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-md bg-neon/20 border border-neon/40 flex items-center justify-center">
-              <Code2 className="w-3.5 h-3.5 text-neon" />
-            </div>
-            <span className="font-bold text-sm">
-              <span className="text-neon">Code</span>
-              <span className="text-foreground">Udaan</span>
-            </span>
+            <img
+              src="/assets/uploads/chatgpt_image_mar_1_2026_10_27_56_pm-019d313a-f842-7626-816b-b899df228237-1.png"
+              alt="CodeUdaan Logo"
+              className="h-10 w-auto object-contain"
+            />
           </div>
         </div>
       </header>
