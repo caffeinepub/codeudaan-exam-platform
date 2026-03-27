@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Dark theme tokens (always dark) */
+    --background: 0.08 0.025 264;
+    --foreground: 0.93 0.02 264;
+    --card: 0.13 0.03 264;
+    --card-foreground: 0.93 0.02 264;
+    --popover: 0.15 0.035 264;
+    --popover-foreground: 0.93 0.02 264;
+    --primary: 0.79 0.22 142;
+    --primary-foreground: 0.08 0.025 264;
+    --secondary: 0.15 0.035 264;
+    --secondary-foreground: 0.93 0.02 264;
+    --muted: 0.13 0.03 264;
+    --muted-foreground: 0.73 0.03 264;
+    --accent: 0.79 0.22 142;
+    --accent-foreground: 0.08 0.025 264;
+    --destructive: 0.65 0.22 27;
+    --destructive-foreground: 0.93 0.02 264;
+    --border: 0.22 0.045 264;
+    --input: 0.22 0.045 264;
+    --ring: 0.79 0.22 142;
+    --chart-1: 0.79 0.22 142;
+    --chart-2: 0.75 0.17 62;
+    --chart-3: 0.78 0.2 152;
+    --chart-4: 0.65 0.18 264;
+    --chart-5: 0.6 0.15 200;
+    --sidebar: 0.11 0.028 264;
+    --sidebar-foreground: 0.93 0.02 264;
+    --sidebar-primary: 0.79 0.22 142;
+    --sidebar-primary-foreground: 0.08 0.025 264;
+    --sidebar-accent: 0.15 0.035 264;
+    --sidebar-accent-foreground: 0.93 0.02 264;
+    --sidebar-border: 0.22 0.045 264;
+    --sidebar-ring: 0.79 0.22 142;
+
+    /* Custom tokens */
+    --neon: 0.79 0.22 142;
+    --neon-dim: 0.65 0.18 142;
+    --warning: 0.75 0.17 62;
+    --monitoring: 0.78 0.2 152;
+    --surface: 0.11 0.028 264;
+    --surface-raised: 0.15 0.035 264;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "GeneralSans", system-ui, sans-serif;
+  }
+
+  code,
+  pre,
+  .mono {
+    font-family: "JetBrainsMono", "Consolas", monospace;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: oklch(0.11 0.028 264);
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.22 0.045 264);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.79 0.22 142 / 0.5);
+}
+
+/* Matrix background pattern */
+.matrix-bg {
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      oklch(0.22 0.045 264 / 0.08) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      oklch(0.22 0.045 264 / 0.04) 40px
+    );
+}
+
+/* Neon glow utilities */
+.neon-glow {
+  box-shadow: 0 0 20px oklch(0.79 0.22 142 / 0.3), 0 0 60px
+    oklch(0.79 0.22 142 / 0.1);
+}
+.neon-text {
+  text-shadow: 0 0 20px oklch(0.79 0.22 142 / 0.8);
+}
+.neon-border {
+  border-color: oklch(0.79 0.22 142);
+  box-shadow: 0 0 8px oklch(0.79 0.22 142 / 0.4);
+}
+
+/* Card surface */
+.exam-card {
+  background: oklch(0.13 0.03 264);
+  border: 1px solid oklch(0.22 0.045 264);
+  border-radius: 0.75rem;
+}
+
+/* Vignette overlay */
+.vignette::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 60%,
+    oklch(0.05 0.015 264 / 0.6) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Answer option hover */
+.answer-option {
+  transition: all 0.15s ease;
+}
+.answer-option:hover {
+  border-color: oklch(0.79 0.22 142 / 0.6);
+  background: oklch(0.15 0.035 264);
+}
+.answer-option.selected {
+  border-color: oklch(0.79 0.22 142);
+  background: oklch(0.79 0.22 142 / 0.08);
+  box-shadow: 0 0 8px oklch(0.79 0.22 142 / 0.2);
+}
+
+/* Progress ring animation */
+@keyframes pulse-ring {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Warning toast animation */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-out-right {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+.warning-toast {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+/* Nav link active underline */
+.nav-link-active {
+  position: relative;
+}
+.nav-link-active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: oklch(0.79 0.22 142);
+  border-radius: 1px;
+  box-shadow: 0 0 6px oklch(0.79 0.22 142 / 0.8);
+}
