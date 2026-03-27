@@ -1,9 +1,9 @@
 import Map "mo:core/Map";
 import Text "mo:core/Text";
 import Runtime "mo:core/Runtime";
-import Migration "migration";
 
-(with migration = Migration.run)
+
+
 actor {
   type ExamResult = {
     username : Text;

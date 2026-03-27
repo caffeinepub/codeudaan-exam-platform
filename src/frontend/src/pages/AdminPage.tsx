@@ -13,7 +13,7 @@ import {
 import { motion } from "motion/react";
 import { useState } from "react";
 
-const ADMIN_PASSWORD = "codeudaan@admin";
+const ADMIN_PASSWORD = "codeudaan@Devi";
 const TOTAL_QUESTIONS = 50;
 
 function getPerformance(score: number, total: number): string {
